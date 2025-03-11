@@ -192,7 +192,7 @@
                         nuestra última IA Writing</p><br>
         
 
-                    <div class="buttons" style="margin-left: -40px;">
+                    <div class="buttons11" style="margin-left: -40px;">
                         <a href="#" class="btn outline-btn"><span class="icon">▶</span> Pruebalo 1 mes
                         </a>
                         <a href="#" class="btn primary-btn">Mirar demo</a>
@@ -485,6 +485,54 @@
                 });
             }, observerOptions);  
             contentObserver.observe(content); 
+        });
+    </script>
+
+
+    <!-- cuadro azul 2 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contentWrapper = document.querySelector('.content-wrapper');
+            const imgIzquierda = document.querySelector('.info-cards img:nth-of-type(1)'); 
+            const imgDerecha = document.querySelector('.info-cards img:nth-of-type(2)'); 
+            const textContent = document.querySelector('.text-content h1');
+            const textParagraph = document.querySelector('.text-content p');
+            const buttons = document.querySelectorAll('.buttons11 .btn');
+    
+            const observerOptions = {
+                root: null, 
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        contentWrapper.style.opacity = 1; 
+                        contentWrapper.style.animation = 'slideUp 1s forwards'; 
+
+                        imgIzquierda.style.opacity = 1; 
+                        imgIzquierda.style.animation = 'curveInLeft 1s forwards'; 
+
+                        imgDerecha.style.opacity = 1; 
+                        imgDerecha.style.animation = 'curveInRight 1s forwards'; 
+
+                        textContent.style.opacity = 1; 
+                        textContent.style.animation = 'fadeInText 1s forwards'; 
+
+                        textParagraph.style.opacity = 1; 
+                        textParagraph.style.animation = 'fadeInText 1s forwards'; 
+
+                        buttons.forEach((button, index) => {
+                            setTimeout(() => {
+                                button.style.opacity = 1; 
+                                button.style.animation = 'fadeInButton 1s forwards'; 
+                            }, index * 200);
+                        });
+                    }
+                });
+            });   
+            observer.observe(contentWrapper); 
         });
     </script>
 </body>

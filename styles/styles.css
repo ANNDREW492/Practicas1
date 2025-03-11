@@ -621,6 +621,8 @@
     z-index: 1;
     width: 100%;
     max-width: 1200px;
+    opacity: 0; 
+    transition: opacity 1.5s ease-out; 
 }
 
 .text-content {
@@ -706,17 +708,85 @@
 
 @keyframes expandFromCenter {
     0% {
-        transform: scale(0); /* Comienza en el centro */
-        opacity: 0; /* Oculto al inicio */
+        transform: scale(0); 
+        opacity: 0; 
     }
     100% {
-        transform: scale(1); /* Termina en su tamaño original */
-        opacity: 1; /* Visible al final */
+        transform: scale(1); 
+        opacity: 1; 
     }
 }
+/* bloque cuadro animalista*/
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%) scale(0.5); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0) scale(1); 
+        opacity: 1; 
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%) scale(0.5); /* Comienza desde la derecha y pequeño */
+        opacity: 0; /* Comienza invisible */
+    }
+    100% {
+        transform: translateX(0) scale(1); /* Termina en su posición original y tamaño */
+        opacity: 1; /* Termina visible */
+    }
+}
+/* bloque cuadro animalista final*/
+
 
 .iconos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translate(100px) rotate(0deg); }
 .iconos:nth-child(2) { transform: translate(-50%, -50%) rotate(72deg) translate(100px) rotate(-72deg); }
 .iconos:nth-child(3) { transform: translate(-50%, -50%) rotate(144deg) translate(100px) rotate(-144deg); }
 .iconos:nth-child(4) { transform: translate(-50%, -50%) rotate(216deg) translate(100px) rotate(-216deg); }
 .iconos:nth-child(5) { transform: translate(-50%, -50%) rotate(288deg) translate(100px) rotate(-288deg); }
+
+@keyframes curveInLeft {
+    0% {
+        opacity: 0;
+        transform: translate(-100%, 50%) scale(0.5); /* Comienza desde la izquierda con curvatura */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1); /* Posición final */
+    }
+}
+
+@keyframes curveInRight {
+    0% {
+        opacity: 0;
+        transform: translate(100%, 50%) scale(0.5); /* Comienza desde la derecha con curvatura */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1); /* Posición final */
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%); /* Comienza desde la izquierda */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Posición final */
+    }
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+        transform: translateX(50%); /* Comienza desde la derecha */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Posición final */
+    }
+}
