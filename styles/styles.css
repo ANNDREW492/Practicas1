@@ -846,18 +846,22 @@ footer p {
 
 @keyframes slideInFromRight {
     0% {
-        transform: translateX(100%); 
-        opacity: 0; 
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(-2%);
+        opacity: 1;
     }
     100% {
-        transform: translateX(0); 
-        opacity: 1; 
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 @keyframes slideInFromRight2 {
     0% {
-        transform: translateX(10%); 
+        transform: translateX(20%); 
         opacity: 0; 
     }
     100% {
@@ -868,12 +872,16 @@ footer p {
 
 @keyframes slideInFromLeft {
     0% {
-        transform: translateX(-100%); 
-        opacity: 0; 
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(2%);
+        opacity: 1;
     }
     100% {
-        transform: translateX(0); 
-        opacity: 1; 
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 

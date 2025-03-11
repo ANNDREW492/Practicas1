@@ -249,13 +249,6 @@
         </div>
 
 
-
-
-
-
-
-
-
     <!--javascript de main tittle, letras grandes del pie de pagina --> 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -457,7 +450,7 @@
                         contenedoresLogo.style.opacity = 1; 
                         contenedoresLogo.style.animation = 'slideInFromLeft2 1.5s forwards'; 
                         fila2.style.opacity = 1; 
-                        fila2.style.animation = 'slideInFromRight 1.5s forwards'; 
+                        fila2.style.animation = 'slideInFromRight2 1.5s forwards'; 
     
                         observer.unobserve(entry.target);
                     }
@@ -589,6 +582,37 @@
             observer.observe(contentWrapper); 
         });
     </script>
+
+    <!--contenido final-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const leftSection = document.querySelector(".left-section");
+    const rightSection = document.querySelector(".right-section");
+    const contentFinal = document.querySelector(".contentfinal");
+
+    const options = {
+        root: null, 
+        threshold: 0.2 
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                contentFinal.style.opacity = "1";
+                leftSection.style.animation = "slideInFromLeft 1.5s ease-out forwards";
+                rightSection.style.animation = "slideInFromRight 1.5s ease-out forwards";
+                observer.disconnect(); 
+            }
+        });
+    }, options);
+
+    observer.observe(contentFinal);
+});
+
+    </script>
+
+
+
 </body>
 
 </html>
