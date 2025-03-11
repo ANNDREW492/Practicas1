@@ -341,6 +341,43 @@
             cuadros.forEach(cuadro => observer.observe(cuadro)); // Observa cada bloque
         });
     </script>
+    
+
+    <!--texto superior de las imagenes 6x5-->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cuadroBlanco2 = document.querySelector('.cuadro-blanco2');
+            const title = cuadroBlanco2.querySelector('.cuadroblancotext2');
+            const paragraph = cuadroBlanco2.querySelector('.cuadroblancotext2_1');
+    
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+    
+            const callback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        
+                        cuadroBlanco2.style.opacity = 1; 
+                        title.style.opacity = 1; 
+                        title.style.animation = 'slideInFromRight 1.5s forwards'; 
+                        paragraph.style.opacity = 1; 
+                        paragraph.style.animation = 'slideInFromRight 1.5s forwards'; 
+                        paragraph.style.animationDelay = '0s'; 
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };  
+            const observer = new IntersectionObserver(callback, options);
+            observer.observe(cuadroBlanco2); 
+        });
+    </script>
+
+
+
     <!-- recuadro de imagenes 6x5-->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -357,9 +394,9 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         contenedoresLogo.style.opacity = 1; 
-                        contenedoresLogo.style.animation = 'slideInFromLeft 2.5s forwards'; 
+                        contenedoresLogo.style.animation = 'slideInFromLeft 1.5s forwards'; 
                         fila2.style.opacity = 1; 
-                        fila2.style.animation = 'slideInFromRight 2.5s forwards'; 
+                        fila2.style.animation = 'slideInFromRight 1.5s forwards'; 
     
                         observer.unobserve(entry.target);
                     }
@@ -399,7 +436,7 @@
             observer.observe(cuadrounlockImage); 
         });
     </script>
-
+    <!---->
 
 </body>
 

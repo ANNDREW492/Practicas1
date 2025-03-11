@@ -357,6 +357,8 @@
     height: 100px;
     margin: 80px auto;
     padding: 20px; 
+    opacity: 0; 
+    transition: opacity 0.5s;
 }
 
 .cuadro-blanco p {
@@ -367,11 +369,15 @@
     padding-left: 150px;
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
+    opacity: 0; 
+    transition: opacity 0.5s;
 }
 .cuadroblancotext2_1{
     color: rgb(119, 134, 149);
     font-family: 'Montserrat', sans-serif;
     line-height:1.5;
+    opacity: 0; 
+    transition: opacity 0.5s;
 }
 
 /* imagenes complementarias */
