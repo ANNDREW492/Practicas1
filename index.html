@@ -105,9 +105,9 @@
             <path d="M 114.138 243.043 L 116.713 249.307 L 123.241 251.777 L 116.713 254.247 L 114.138 260.511 L 111.563 254.247 L 105.035 251.777 L 111.563 249.307 Z" bx:shape="star 114.138 251.777 9.103 8.734 0.4 4 1@35c9a074" style="fill: rgb(245, 142, 59); transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0.912958, 0.408053, -0.408053, 0.912958, 1.287597, 12.222282)"></path>
           </svg>
         
-        <p class="cuadroblancotext"><strong>Nuestro equipo, compuesto por los mejores<br> ingenieros de visión artificial y dispositivos <br>móviles,
+        <p class="cuadroblancotext11"><strong>Nuestro equipo, compuesto por los mejores<br> ingenieros de visión artificial y dispositivos <br>móviles,
         <a style="color: rgb(119, 134, 149);"> están disponible para realizar <br>investigaciones personalizadas y desarrollar<br> soluciones a medida.</p>
-    <p class="cuadroblancotext">Tiene la capacidad para leer y generar <br>contenidos en más de 65 idiomas que  <br>abarcan el inglés, el español
+    <p class="cuadroblancotext22">Tiene la capacidad para leer y generar <br>contenidos en más de 65 idiomas que  <br>abarcan el inglés, el español
         japonés.<br></a></strong></p><br><br>
     </div>
     <div class="cuadro-blanco2">
@@ -334,12 +334,18 @@
                     if (entry.isIntersecting) {
                         entry.target.style.animation = 'slideUp 1.5s forwards'; 
                         entry.target.style.opacity = 1; 
-                        const texts = entry.target.querySelectorAll('p, h1'); 
-                        texts.forEach((text, index) => {
-                            text.style.opacity = 1; 
-                            text.style.transitionDelay = `${index * 0.2}s`; 
-                            text.style.transition = 'opacity 0.5s'; 
-                        });
+    
+                        const text1 = entry.target.querySelector('.cuadroblancotext11'); 
+                        const text2 = entry.target.querySelector('.cuadroblancotext22'); 
+
+                        text1.style.opacity = 1; 
+                        text1.style.transition = 'opacity 0.5s'; 
+                        text1.style.animation = 'slideInFromLeft 1.5s forwards'; 
+
+                        text2.style.opacity = 1; 
+                        text2.style.transition = 'opacity 0.5s'; 
+                        text2.style.animation = 'slideInFromRight 1.5s forwards';
+    
                         observer.unobserve(entry.target);
                     }
                 });
@@ -416,6 +422,7 @@
             observer.observe(fila2); // Observa el bloque fila2
         });
     </script>
+
     <!--recuadro blanco 2(unlocktext)-->
     <script>
         document.addEventListener("DOMContentLoaded", function() {

@@ -361,6 +361,22 @@
     transition: opacity 0.5s;
 }
 
+.cuadroblancotext11{
+    margin-left: 540px;
+    text-align: left;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+.cuadroblancotext22{
+    margin-left: 540px;
+    text-align: left;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
 .cuadro-blanco p {
     opacity: 0; 
     transition: opacity 0.5s;
