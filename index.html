@@ -42,8 +42,8 @@
                             contenido más rápido y rentable</strong></p><br><br>
         
         <div class="buttons">
-        <a href="#" class="btn primary-btn slide-in">Try The Playground</a>
-        <a href="#" class="btn outline-btn slide-in"><span class="icon">▶</span> Watch A Demo
+        <a href="#" class="btn primary-btn slide-in">Explora el Playground</a>
+        <a href="#" class="btn outline-btn slide-in"><span class="icon">▶</span> Ver demostración
         </a>
     </div>
     <p class="trusted-text"><strong>Grandes empresas confían en nosotros:</strong></p>
@@ -262,7 +262,6 @@
     document.addEventListener("DOMContentLoaded", function() {
         const imagenesDerecha = document.querySelector('.imagenes-derecha');
         const images = imagenesDerecha.querySelectorAll('img'); 
-
         const options = {
             root: null,
             rootMargin: '0px',
@@ -340,11 +339,11 @@
 
                         text1.style.opacity = 1; 
                         text1.style.transition = 'opacity 0.5s'; 
-                        text1.style.animation = 'slideInFromLeft 1.5s forwards'; 
+                        text1.style.animation = 'slideInFromLeft2 2s forwards'; 
 
                         text2.style.opacity = 1; 
                         text2.style.transition = 'opacity 0.5s'; 
-                        text2.style.animation = 'slideInFromRight 1.5s forwards';
+                        text2.style.animation = 'slideInFromRight2 2s forwards';
     
                         observer.unobserve(entry.target);
                     }
@@ -352,7 +351,7 @@
             };
     
             const observer = new IntersectionObserver(callback, options);
-            cuadros.forEach(cuadro => observer.observe(cuadro)); // Observa cada bloque
+            cuadros.forEach(cuadro => observer.observe(cuadro));
         });
     </script>
     
@@ -377,7 +376,7 @@
                         
                         cuadroBlanco2.style.opacity = 1; 
                         title.style.opacity = 1; 
-                        title.style.animation = 'slideInFromRight 1.5s forwards'; 
+                        title.style.animation = 'slideInFromLeft 1.5s forwards'; 
                         paragraph.style.opacity = 1; 
                         paragraph.style.animation = 'slideInFromRight 1.5s forwards'; 
                         paragraph.style.animationDelay = '0s'; 
@@ -408,7 +407,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         contenedoresLogo.style.opacity = 1; 
-                        contenedoresLogo.style.animation = 'slideInFromLeft 1.5s forwards'; 
+                        contenedoresLogo.style.animation = 'slideInFromLeft2 1.5s forwards'; 
                         fila2.style.opacity = 1; 
                         fila2.style.animation = 'slideInFromRight 1.5s forwards'; 
     
@@ -432,7 +431,7 @@
             const options = {
                 root: null, 
                 rootMargin: '0px',
-                threshold: 0.1 
+                threshold: 0.2 
             };   
             const callback = (entries) => {
                 entries.forEach(entry => {
@@ -519,10 +518,10 @@
                         contentWrapper.style.animation = 'slideUp 1s forwards'; 
 
                         imgIzquierda.style.opacity = 1; 
-                        imgIzquierda.style.animation = 'curveInLeft 1s forwards'; 
+                        imgIzquierda.style.animation = 'curveInLeft 2s forwards'; 
 
                         imgDerecha.style.opacity = 1; 
-                        imgDerecha.style.animation = 'curveInRight 1s forwards'; 
+                        imgDerecha.style.animation = 'curveInRight 2s forwards'; 
 
                         textContent.style.opacity = 1; 
                         textContent.style.animation = 'fadeInText 1s forwards'; 

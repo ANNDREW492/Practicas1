@@ -239,9 +239,8 @@
     width: 550px;
     top: 200px; 
     right: -150px; 
-    transform: rotate(-15deg);
     z-index: 1;
-    
+    animation: expandFromCenter2 2.5s forwards;
 }
 
 .chats1 {
@@ -701,6 +700,18 @@
         opacity: 1; 
     }
 }
+
+@keyframes slideInFromRight2 {
+    0% {
+        transform: translateX(10%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%); 
@@ -711,6 +722,18 @@
         opacity: 1; 
     }
 }
+
+@keyframes slideInFromLeft2 {
+    0% {
+        transform: translateX(-10%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
 @keyframes slideDown {
     0% {
         transform: translateY(-100px); 
@@ -730,6 +753,18 @@
     100% {
         transform: scale(1); 
         opacity: 1; 
+    }
+}
+@keyframes expandFromCenter2 {
+    0% {
+        transform: scale(0); 
+        opacity: 0; 
+        transform: translateY(-60px) rotate(0deg);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateX(-10px) rotate(-20deg);
     }
 }
 /* bloque cuadro animalista*/
