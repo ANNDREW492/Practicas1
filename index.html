@@ -168,13 +168,14 @@
                 </div><br>
     
                 <div class="content">
-                    <h1>Seamless Integrations <br>with Coca</h1>
-                    <p>Start by introducing the concept of integrations and their<br>
-                         significance in optimizing workflows for AI Interview notes.</p>
+                    <h1>Integraciones sin fisuras <br>con Coca</h1>
+                    <p><strong> Empieze por introducir el concepto de integraciones y su importancia<br>
+                        en la optimización de los flujos de trabajo para las notas de entrevista de IA.</strong></p>
     
-                    <div class="buttons">
-                        <a href="#" class="btn primary-btn"> View all integrations🡵</a>
+                    <div class="buttons10">
+                        <a href="#" class="btnUT primary-btn">ver integraciones🡵</a>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -255,35 +256,7 @@
         });
     </script>
 
-    <!-- cuadro azul-->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    const cuadro = document.querySelector('.cuadro-azul');
-    const imagen = document.querySelector('.info-image');
-
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0
-    };
-
-    const callback = (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                cuadro.style.animation = 'slideUp 2s forwards'; // Aplica la animación al cuadro
-                cuadro.style.opacity = 1; // Asegúrate de que el bloque sea visible
-                imagen.style.animation = 'slideDown 2s forwards'; // Aplica la animación a la imagen
-                imagen.style.opacity = 1; // Asegúrate de que la imagen sea visible
-                observer.unobserve(entry.target); // Deja de observar el bloque después de que se anima
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(cuadro); // Observa el bloque
-});
-    </script>
-<!--cuadro blanco1-->
+    <!--cabezera derecha-->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const imagenesDerecha = document.querySelector('.imagenes-derecha');
@@ -313,6 +286,37 @@
         observer.observe(imagenesDerecha); 
     });
 </script>
+
+
+    <!-- cuadro azul-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const cuadro = document.querySelector('.cuadro-azul');
+    const imagen = document.querySelector('.info-image');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0
+    };
+
+    const callback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                cuadro.style.animation = 'slideUp 2s forwards'; 
+                cuadro.style.opacity = 1; 
+                imagen.style.animation = 'slideDown 2s forwards'; 
+                imagen.style.opacity = 1; 
+                observer.unobserve(entry.target); 
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(cuadro);
+});
+    </script>
+
     <!-- cuadro blanco-->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -439,8 +443,49 @@
             observer.observe(cuadrounlockImage); 
         });
     </script>
-    <!---->
 
+
+    <!-- recuadro minimalista-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const icons = document.querySelectorAll('.contenedoresimagenes .iconos');
+            const content = document.querySelector('.content');
+    
+            const observerOptions = {
+                root: null, // Observa en relación al viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% de visibilidad
+            };
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const icon = entry.target;
+                        const index = Array.from(icons).indexOf(icon);
+                        setTimeout(() => {
+                            icon.style.opacity = 1;
+                            icon.style.transition = 'transform 1s ease-out'; 
+                            icon.style.transform = 'translate(20%, 20%)'; 
+                        }, index * 200); // Retraso progresivo
+                    }
+                });
+            }, observerOptions);  
+            icons.forEach(icon => {
+                observer.observe(icon); 
+            });
+ 
+            const contentObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        content.style.opacity = 1; 
+                        content.style.animation = 'slideUp 1.5s forwards'; 
+                    }
+                });
+            }, observerOptions);  
+            contentObserver.observe(content); 
+        });
+    </script>
 </body>
 
 </html>
