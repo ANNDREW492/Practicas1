@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inicio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles\styles.css">
+
 </head>
 <body>
     <svg class="curva" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
@@ -209,6 +211,51 @@
                 </div>
             </div>
         </div>
+
+        <div class="cuadrofinal">
+            <div class="containerfinal">
+                <div class="contentfinal">
+                    <div class="left-section">
+                        <h1>Listo <span class="italic">para empezar</span> ?</h1>
+                        <p>Si tienes alguna pregunta sobre nuestro servicio, te lo<br>
+                             responderemos en lo más breve posible !</p><br>
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter your email" class="cuadroemail">
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="right-section">
+                        <h2>Revisa nuestra seccion de preguntas frecuentes. </h2>
+                        <ul>
+                            <li>
+                                <span>Qué es Coca Soft</span><br>
+                                <i class="fas fa-arrow-right"></i>
+                            </li><br>
+                            <li>
+                                <span>Cómo obtengo el servicio de Coca Soft</span><br>
+                                <i class="fas fa-arrow-right"></i>
+                            </li><br>
+                            <li>
+                                <span>¿Qué tipo de servicio recibiré?</span><br>
+                                <i class="fas fa-arrow-right"></i>
+                            </li><br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p>© Todos los derechos reservados.</p>
+            </footer>
+        </div>
+
+
+
+
+
+
+
+
+
     <!--javascript de main tittle, letras grandes del pie de pagina --> 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -262,6 +309,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         const imagenesDerecha = document.querySelector('.imagenes-derecha');
         const images = imagenesDerecha.querySelectorAll('img'); 
+        const brazoRobot = document.querySelector('.brazo_robot1');
         const options = {
             root: null,
             rootMargin: '0px',
