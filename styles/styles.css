@@ -687,3 +687,13 @@
         opacity: 1; 
     }
 }
+@keyframes slideDown {
+    0% {
+        transform: translateY(-60px); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}

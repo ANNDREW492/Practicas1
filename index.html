@@ -242,7 +242,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const index = Array.from(images).indexOf(entry.target);
-                        entry.target.style.animation = `slideUp 2s forwards`; // Aplica la animación
+                        entry.target.style.animation = `slideUp 3s forwards`; // Aplica la animación
                         entry.target.style.animationDelay = `${index * 0.2}s`; // Retraso progresivo
                         entry.target.style.opacity = 1; // Asegúrate de que la imagen sea visible
                         observer.unobserve(entry.target); // Deja de observar la imagen después de que se anima
@@ -258,29 +258,32 @@
     <!-- cuadro azul-->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const cuadro = document.querySelector('.cuadro-azul');
-    
-            const options = {
-                root: null, // Usa el viewport como raíz
-                rootMargin: '0px',
-                threshold: 0 // Cambia este valor según sea necesario
-            };
-    
-            const callback = (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'slideUp 2s forwards'; // Aplica la animación
-                        entry.target.style.opacity = 1; // Asegúrate de que el bloque sea visible
-                        observer.unobserve(entry.target); // Deja de observar el bloque después de que se anima
-                    }
-                });
-            };
-    
-            const observer = new IntersectionObserver(callback, options);
-            observer.observe(cuadro); // Observa el bloque
-        });
-    </script>
+    const cuadro = document.querySelector('.cuadro-azul');
+    const imagen = document.querySelector('.info-image');
 
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0
+    };
+
+    const callback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                cuadro.style.animation = 'slideUp 2s forwards'; // Aplica la animación al cuadro
+                cuadro.style.opacity = 1; // Asegúrate de que el bloque sea visible
+                imagen.style.animation = 'slideDown 2s forwards'; // Aplica la animación a la imagen
+                imagen.style.opacity = 1; // Asegúrate de que la imagen sea visible
+                observer.unobserve(entry.target); // Deja de observar el bloque después de que se anima
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(cuadro); // Observa el bloque
+});
+    </script>
+<!--cuadro blanco1-->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const imagenesDerecha = document.querySelector('.imagenes-derecha');
