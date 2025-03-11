@@ -556,7 +556,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         contentWrapper.style.opacity = 1; 
-                        contentWrapper.style.animation = 'slideUp 1s forwards'; 
+                        contentWrapper.style.animation = 'slideUp 1.5s forwards'; 
 
                         imgIzquierda.style.opacity = 1; 
                         imgIzquierda.style.animation = 'curveInLeft 2s forwards'; 
@@ -565,15 +565,15 @@
                         imgDerecha.style.animation = 'curveInRight 2s forwards'; 
 
                         textContent.style.opacity = 1; 
-                        textContent.style.animation = 'fadeInText 1s forwards'; 
+                        textContent.style.animation = 'fadeInText 1.5s forwards'; 
 
                         textParagraph.style.opacity = 1; 
-                        textParagraph.style.animation = 'fadeInText 1s forwards'; 
+                        textParagraph.style.animation = 'fadeInText 1.5s forwards'; 
 
                         buttons.forEach((button, index) => {
                             setTimeout(() => {
                                 button.style.opacity = 1; 
-                                button.style.animation = 'fadeInButton 1s forwards'; 
+                                button.style.animation = 'fadeInButton 1.5s forwards'; 
                             }, index * 200);
                         });
                     }
