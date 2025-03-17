@@ -33,4 +33,8 @@ Asegurarse de tener lo siguiente antes de ejecutar el proyecto:
 - Git (opcional para clonar el repositorio).
 
 ---
+## 📥 Proceso de Instalación:
 
+1. **Clona el repositorio** (opcional):
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.git
