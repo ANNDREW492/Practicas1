@@ -4,7 +4,9 @@
   "description": "Este proyecto es una **página web maqueta interactiva** creada para ser presentada como portafolio y entrenamiento. Implementa código básico de html, javascript y css\r ---\r 📎 **Acceso al proyecto en línea:**  \r 👉 [https://practicas1-pi.vercel.app/](https://practicas1-pi.vercel.app/)\r ## 🛠️ Tecnologías utilizadas:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/ANNDREW492/Practicas1/issues"
   },
-  "homepage": "https://github.com/ANNDREW492/Practicas1#readme"
+  "homepage": "https://github.com/ANNDREW492/Practicas1#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "commitizen": "^4.3.1",
+    "husky": "^8.0.0"
+  }
 }
